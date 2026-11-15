@@ -4,19 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carnet Guitare</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
     .chord-interactive {
         display: inline-block;
@@ -24,15 +12,18 @@
         color: #d97706;
         background-color: rgba(254, 243, 199, 0.6);
         padding: 0 0.2rem;
+        margin: 0 -0.2rem;
         border-radius: 0.25rem;
         position: relative;
         cursor: pointer;
-        border-bottom: 2px solid #f59e0b;
+        box-shadow: inset 0 -2px 0 #f59e0b;
+        line-height: 1.25;
+        vertical-align: top;
     }
     .dark .chord-interactive {
         color: #fbbf24;
         background-color: rgba(120, 53, 15, 0.5);
-        border-bottom-color: #d97706;
+        box-shadow: inset 0 -2px 0 #d97706;
     }
 
     .chord-tooltip {
@@ -170,7 +161,14 @@
         min-height: 1.25em;
         line-height: 1.25;
     }
+    .song-chunk .chord-row,
+    .song-chunk .lyric-row {
+        display: block;
+        height: 1.25em;
+    }
     </style>
+    <!-- Utilitaires Tailwind précompilés (aucun appel externe) -->
+    <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.visible{visibility:visible}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-3{bottom:0.75rem}.bottom-full{bottom:100%}.left-0{left:0px}.right-0{right:0px}.right-3{right:0.75rem}.top-0\.5{top:0.125rem}.top-full{top:100%}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mr-2{margin-right:0.5rem}.mt-2{margin-top:0.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.contents{display:contents}.hidden{display:none}.h-16{height:4rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-full{height:100%}.min-h-0{min-height:0px}.w-16{width:4rem}.w-20{width:5rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-56{width:14rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-full{width:100%}.min-w-0{min-width:0px}.min-w-\[1\.5rem\]{min-width:1.5rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-full{max-width:100%}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.resize-none{resize:none}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.content-start{align-content:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-items-center{justify-items:center}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-x-2{column-gap:0.5rem}.gap-y-2{row-gap:0.5rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.375rem * var(--tw-space-x-reverse));margin-left:calc(0.375rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.overscroll-contain{overscroll-behavior:contain}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-l{border-left-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.bg-rose-500{--tw-bg-opacity:1;background-color:rgb(244 63 94 / var(--tw-bg-opacity, 1))}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-300{--tw-bg-opacity:1;background-color:rgb(203 213 225 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900\/50{background-color:rgb(15 23 42 / 0.5)}.bg-violet-500{--tw-bg-opacity:1;background-color:rgb(139 92 246 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-0\.5{padding:0.125rem}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-0{padding-left:0px;padding-right:0px}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.pl-2{padding-left:0.5rem}.pr-0{padding-right:0px}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-normal{font-weight:400}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-0.025em}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.accent-amber-500{accent-color:#f59e0b}.opacity-50{opacity:0.5}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.hover\:bg-amber-500:hover{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.hover\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.hover\:bg-amber-700:hover{--tw-bg-opacity:1;background-color:rgb(180 83 9 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-600:hover{--tw-bg-opacity:1;background-color:rgb(225 29 72 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-600:hover{--tw-bg-opacity:1;background-color:rgb(2 132 199 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:bg-violet-600:hover{--tw-bg-opacity:1;background-color:rgb(124 58 237 / var(--tw-bg-opacity, 1))}.hover\:text-amber-700:hover{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.dark\:block:is(.dark *){display:block}.dark\:hidden:is(.dark *){display:none}.dark\:border-amber-500:is(.dark *){--tw-border-opacity:1;border-color:rgb(245 158 11 / var(--tw-border-opacity, 1))}.dark\:border-slate-600:is(.dark *){--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.dark\:border-slate-700:is(.dark *){--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.dark\:border-slate-700\/50:is(.dark *){border-color:rgb(51 65 85 / 0.5)}.dark\:bg-slate-100:is(.dark *){--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-600:is(.dark *){--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-700:is(.dark *){--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-700\/50:is(.dark *){background-color:rgb(51 65 85 / 0.5)}.dark\:bg-slate-700\/60:is(.dark *){background-color:rgb(51 65 85 / 0.6)}.dark\:bg-slate-800:is(.dark *){--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-800\/50:is(.dark *){background-color:rgb(30 41 59 / 0.5)}.dark\:bg-slate-800\/80:is(.dark *){background-color:rgb(30 41 59 / 0.8)}.dark\:bg-slate-900:is(.dark *){--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.dark\:text-amber-400:is(.dark *){--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.dark\:text-slate-100:is(.dark *){--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.dark\:text-slate-300:is(.dark *){--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.dark\:text-slate-400:is(.dark *){--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.dark\:text-slate-500:is(.dark *){--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.dark\:text-slate-900:is(.dark *){--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.dark\:hover\:bg-slate-600:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.dark\:hover\:bg-slate-700:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.dark\:hover\:text-amber-300:hover:is(.dark *){--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:w-64{width:16rem}.sm\:p-6{padding:1.5rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-3{padding-top:0.75rem;padding-bottom:0.75rem}}@media (min-width: 768px){.md\:p-10{padding:2.5rem}}</style>
 </head>
 <body class="h-full bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 flex flex-col font-sans antialiased overflow-hidden">
 <!-- Header Navigation -->
@@ -858,8 +856,140 @@
         ],
         "B7": [
             { name: "B7", frets: [-1, 2, 1, 2, 0, 2], fingers: [-1, 2, 1, 3, 0, 4], baseFret: 1 }
+        ],
+        "C5": [
+            { name: "C5 (forme La)", frets: [-1, 3, 5, 5, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 3 },
+            { name: "C5 (forme Mi)", frets: [8, 10, 10, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 8 }
+        ],
+        "C#5": [
+            { name: "C#5 (forme La)", frets: [-1, 4, 6, 6, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 4 },
+            { name: "C#5 (forme Mi)", frets: [9, 11, 11, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 9 }
+        ],
+        "D5": [
+            { name: "D5 (forme La)", frets: [-1, 5, 7, 7, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 5 },
+            { name: "D5 (forme Mi)", frets: [10, 12, 12, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 10 }
+        ],
+        "Eb5": [
+            { name: "Eb5 (forme La)", frets: [-1, 6, 8, 8, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 6 },
+            { name: "Eb5 (forme Mi)", frets: [11, 13, 13, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 11 }
+        ],
+        "E5": [
+            { name: "E5 (forme Mi)", frets: [0, 2, 2, -1, -1, -1], fingers: [0, 1, 2, -1, -1, -1], baseFret: 1 },
+            { name: "E5 (forme La)", frets: [-1, 7, 9, 9, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 7 }
+        ],
+        "F5": [
+            { name: "F5 (forme Mi)", frets: [1, 3, 3, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 1 },
+            { name: "F5 (forme La)", frets: [-1, 8, 10, 10, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 8 }
+        ],
+        "F#5": [
+            { name: "F#5 (forme Mi)", frets: [2, 4, 4, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 2 },
+            { name: "F#5 (forme La)", frets: [-1, 9, 11, 11, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 9 }
+        ],
+        "G5": [
+            { name: "G5 (forme Mi)", frets: [3, 5, 5, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 3 },
+            { name: "G5 (forme La)", frets: [-1, 10, 12, 12, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 10 }
+        ],
+        "Ab5": [
+            { name: "Ab5 (forme Mi)", frets: [4, 6, 6, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 4 },
+            { name: "Ab5 (forme La)", frets: [-1, 11, 13, 13, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 11 }
+        ],
+        "A5": [
+            { name: "A5 (forme La)", frets: [-1, 0, 2, 2, -1, -1], fingers: [-1, 0, 1, 2, -1, -1], baseFret: 1 },
+            { name: "A5 (forme Mi)", frets: [5, 7, 7, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 5 }
+        ],
+        "Bb5": [
+            { name: "Bb5 (forme La)", frets: [-1, 1, 3, 3, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 1 },
+            { name: "Bb5 (forme Mi)", frets: [6, 8, 8, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 6 }
+        ],
+        "B5": [
+            { name: "B5 (forme La)", frets: [-1, 2, 4, 4, -1, -1], fingers: [-1, 1, 3, 4, -1, -1], baseFret: 2 },
+            { name: "B5 (forme Mi)", frets: [7, 9, 9, -1, -1, -1], fingers: [1, 3, 4, -1, -1, -1], baseFret: 7 }
+        ],
+        "Asus2": [
+            { name: "Asus2", frets: [-1, 0, 2, 2, 0, 0], fingers: [-1, 0, 1, 2, 0, 0], baseFret: 1 }
+        ],
+        "Esus4": [
+            { name: "Esus4", frets: [0, 2, 2, 2, 0, 0], fingers: [0, 2, 3, 4, 0, 0], baseFret: 1 }
+        ],
+        "Gsus4": [
+            { name: "Gsus4", frets: [3, 3, 0, 0, 1, 3], fingers: [2, 3, 0, 0, 1, 4], baseFret: 1 }
+        ],
+        "A7": [
+            { name: "A7", frets: [-1, 0, 2, 0, 2, 0], fingers: [-1, 0, 2, 0, 3, 0], baseFret: 1 }
+        ],
+        "C7": [
+            { name: "C7", frets: [-1, 3, 2, 3, 1, 0], fingers: [-1, 3, 2, 4, 1, 0], baseFret: 1 }
+        ],
+        "D7": [
+            { name: "D7", frets: [-1, -1, 0, 2, 1, 2], fingers: [-1, -1, 0, 2, 1, 3], baseFret: 1 }
+        ],
+        "G7": [
+            { name: "G7", frets: [3, 2, 0, 0, 0, 1], fingers: [3, 2, 0, 0, 0, 1], baseFret: 1 }
+        ],
+        "Am7": [
+            { name: "Am7", frets: [-1, 0, 2, 0, 1, 0], fingers: [-1, 0, 2, 0, 1, 0], baseFret: 1 }
+        ],
+        "Dm7": [
+            { name: "Dm7", frets: [-1, -1, 0, 2, 1, 1], fingers: [-1, -1, 0, 2, 1, 1], baseFret: 1 }
+        ],
+        "Em7": [
+            { name: "Em7", frets: [0, 2, 0, 0, 0, 0], fingers: [0, 1, 0, 0, 0, 0], baseFret: 1 }
+        ],
+        "Bm7": [
+            { name: "Bm7", frets: [-1, 2, 0, 2, 0, 2], fingers: [-1, 1, 0, 2, 0, 3], baseFret: 1 }
+        ],
+        "Cmaj7": [
+            { name: "Cmaj7", frets: [-1, 3, 2, 0, 0, 0], fingers: [-1, 3, 2, 0, 0, 0], baseFret: 1 }
+        ],
+        "Dmaj7": [
+            { name: "Dmaj7", frets: [-1, -1, 0, 2, 2, 2], fingers: [-1, -1, 0, 1, 1, 1], baseFret: 1 }
+        ],
+        "Emaj7": [
+            { name: "Emaj7", frets: [0, 2, 1, 1, 0, 0], fingers: [0, 3, 1, 2, 0, 0], baseFret: 1 }
+        ],
+        "Fmaj7": [
+            { name: "Fmaj7", frets: [-1, -1, 3, 2, 1, 0], fingers: [-1, -1, 3, 2, 1, 0], baseFret: 1 }
+        ],
+        "Gmaj7": [
+            { name: "Gmaj7", frets: [3, 2, 0, 0, 0, 2], fingers: [2, 1, 0, 0, 0, 3], baseFret: 1 }
+        ],
+        "Amaj7": [
+            { name: "Amaj7", frets: [-1, 0, 2, 1, 2, 0], fingers: [-1, 0, 2, 1, 3, 0], baseFret: 1 }
+        ],
+        "Cadd9": [
+            { name: "Cadd9", frets: [-1, 3, 2, 0, 3, 0], fingers: [-1, 2, 1, 0, 3, 0], baseFret: 1 }
+        ],
+        "A6": [
+            { name: "A6", frets: [-1, 0, 2, 2, 2, 2], fingers: [-1, 0, 1, 1, 1, 1], baseFret: 1 }
+        ],
+        "D6": [
+            { name: "D6", frets: [-1, -1, 0, 2, 0, 2], fingers: [-1, -1, 0, 1, 0, 2], baseFret: 1 }
+        ],
+        "Bdim": [
+            { name: "Bdim", frets: [-1, 2, 3, 4, 3, -1], fingers: [-1, 1, 2, 4, 3, -1], baseFret: 1 }
+        ],
+        "Caug": [
+            { name: "Caug", frets: [-1, 3, 2, 1, 1, 0], fingers: [-1, 4, 3, 1, 1, 0], baseFret: 1 }
+        ],
+        "D/F#": [
+            { name: "D/F#", frets: [2, -1, 0, 2, 3, 2], fingers: [1, -1, 0, 2, 4, 3], baseFret: 1 }
+        ],
+        "G/B": [
+            { name: "G/B", frets: [-1, 2, 0, 0, 3, 3], fingers: [-1, 1, 0, 0, 3, 4], baseFret: 1 }
+        ],
+        "C/G": [
+            { name: "C/G", frets: [3, 3, 2, 0, 1, 0], fingers: [4, 3, 2, 0, 1, 0], baseFret: 1 }
+        ],
+        "Am/G": [
+            { name: "Am/G", frets: [3, 0, 2, 2, 1, 0], fingers: [4, 0, 2, 3, 1, 0], baseFret: 1 }
         ]
     };
+
+    // Alias de saisie : Cmaj7 s'écrit aussi CM7
+    Object.keys(chordLibrary).forEach(k => {
+        const m = /^(.+)maj7$/.exec(k);
+        if (m && !chordLibrary[m[1] + 'M7']) chordLibrary[m[1] + 'M7'] = chordLibrary[k];
+    });
 
     function generateBarreVariants(pc, suffix, label) {
         const isMinor = /^(?:min|m(?!aj))/.test(suffix);
@@ -991,24 +1121,21 @@
         return Math.max(120, songContainer.clientWidth - pad);
     }
 
-    function chunkWidthPx(chk, fontSize) {
-        const base = Math.max(textWidthPx(chk.c, fontSize), textWidthPx(chk.l, fontSize));
-        const chordCount = (chk.c.trim().match(/\S+/g) || []).length;
-        return base * 1.06 + chordCount * 9;
-    }
-
     function groupChunksIntoRows(chunks, fontSize) {
-        const avail = availableTextWidth();
+        const avail = availableTextWidth() - 1;
+        const cw = textWidthPx('0000000000', fontSize) / 10;
         const rows = [];
         let row = [], rowW = 0;
         chunks.forEach(chk => {
-            const w = chunkWidthPx(chk, fontSize);
-            if (row.length > 0 && rowW + w > avail) {
+            const full = chk.c.length * cw;
+            const trail = Math.min(chk.c.length - chk.c.trimEnd().length,
+                                   chk.l.length - chk.l.trimEnd().length) * cw;
+            if (row.length > 0 && rowW + full - trail > avail) {
                 rows.push(row);
                 row = []; rowW = 0;
             }
             row.push(chk);
-            rowW += w;
+            rowW += full;
         });
         if (row.length) rows.push(row);
         return rows;
@@ -1048,6 +1175,9 @@
             const pos = sortedStarts[idx];
             if (pos > 0 && pos < lPad.length) {
                 if (lPad[pos - 1] !== ' ' && lPad[pos] !== ' ') {
+                    continue;
+                }
+                if (cPad[pos - 1] !== ' ' && cPad[pos] !== ' ') {
                     continue;
                 }
             }
@@ -1562,6 +1692,15 @@
     document.addEventListener('keyup', (e) => {
         if (e.code === 'Space' && e.target && e.target.tagName === 'BUTTON') e.preventDefault();
     });
+
+    let _lastW = 0, _rzTimer = null;
+    new ResizeObserver(() => {
+        const w = songContainer.clientWidth;
+        if (w === _lastW) return;
+        _lastW = w;
+        clearTimeout(_rzTimer);
+        _rzTimer = setTimeout(() => { if (currentSong && !isEditing) renderSongContent(); }, 150);
+    }).observe(songContainer);
 
     window.onload = () => {
         setChordColumns(2);
